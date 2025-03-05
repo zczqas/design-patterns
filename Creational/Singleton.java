@@ -6,8 +6,7 @@ package Creational;
 // Singleton pattern is used for logging, driver objects, caching, thread pools, database connections.
 
 public class Singleton {
-    private static Singleton instance;
-    // Singleton class have a private constructor
+    private static Singleton instance; // This is a private static variable of the same class
 
     private Singleton() {
     } // This is a private constructor
@@ -15,8 +14,13 @@ public class Singleton {
     // This is a static method that returns the instance of the Singleton class
     public static Singleton getInstance() {
         // If the instance is null, create a new instance
-        if (instance == null) {
+        if (instance != null) {
+            System.out.println("Returning existing instance " + instance.hashCode());
+        } else if (instance == null) {
             instance = new Singleton();
+            System.out.println("Creating new instance " + instance.hashCode());
+        } else {
+            throw new AssertionError("This should not happen");
         }
         // We will never create more than one instance of the Singleton class
         return instance;
