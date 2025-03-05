@@ -14,9 +14,11 @@ public class Singleton {
 
     // This is a static method that returns the instance of the Singleton class
     public static Singleton getInstance() {
+        // If the instance is null, create a new instance
         if (instance == null) {
             instance = new Singleton();
         }
+        // We will never create more than one instance of the Singleton class
         return instance;
     }
 
@@ -25,6 +27,8 @@ public class Singleton {
         // keyword since the constructor is private
 
         // Singleton obj = new Singleton(); // This will give an error
+
+        // Since we are returning the same instance, the below code will return true
         Singleton instance1 = Singleton.getInstance();
         Singleton instance2 = Singleton.getInstance();
         System.out.println(instance1 == instance2); // true
