@@ -8,6 +8,8 @@
 // It has a method executeStrategy() that calls the execute() method of the strategy interface.
 
 // Here the runtime behaviour of the Context class can be changed by changing the strategy object.
+
+// Strategy Pattern is programming at the interface level just use a interface and do the logic below the interface.
 package Behavioural;
 
 interface Strategy {
